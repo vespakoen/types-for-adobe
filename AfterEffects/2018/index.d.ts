@@ -1,7 +1,79 @@
 /// <reference path="../../shared/global.d.ts" />
+/// <reference path="../../shared/ScriptUI.d.ts" />
 
 declare class Global {
-  app: Application
+	AlphaMode: AlphaMode;
+	AutoOrientType: AutoOrientType;
+	BlendingMode: BlendingMode;
+	ChannelType: ChannelType;
+	CloseOptions: CloseOptions;
+	FastPreviewType: FastPreviewType;
+	FeetFramesFilmType: FeetFramesFilmType;
+	FieldSeparationType: FieldSeparationType;
+	FootageTimecodeDisplayStartType: FootageTimecodeDisplayStartType;
+	FrameBlendingType: FrameBlendingType;
+	FramesCountType: FramesCountType;
+	GetSettingsFormat: GetSettingsFormat;
+	GpuAccelType: GpuAccelType;
+	ImportAsType: ImportAsType;
+	KeyframeInterpolationType: KeyframeInterpolationType;
+	Language: Language;
+	LayerQuality: LayerQuality;
+	LayerSamplingQuality: LayerSamplingQuality;
+	LightType: LightType;
+	LogType: LogType;
+	LoopMode: any;
+	MaskFeatherFalloff: MaskFeatherFalloff;
+	MaskMode: MaskMode;
+	MaskMotionBlur: MaskMotionBlur;
+	PREFType: PREFType;
+	ParagraphJustification: ParagraphJustification;
+	PlayMode: any;
+	PostRenderAction: PostRenderAction;
+	ProjectThread: any;
+	PropertyType: PropertyType;
+	PropertyValueType: PropertyValueType;
+	PulldownMethod: PulldownMethod;
+	PulldownPhase: PulldownPhase;
+	PurgeTarget: PurgeTarget;
+	RQItemStatus: RQItemStatus;
+	ResolveType: any;
+	TimeDisplayType: TimeDisplayType;
+	ToolType: ToolType;
+	TrackMatteType: TrackMatteType;
+	ViewerType: ViewerType;
+	app: Application;
+	system: System;
+	
+	/** Clears text from the Info panel. */
+	clearOutput: () => void;
+
+	/** Converts string time value to a numeric time value. */
+	currentFormatToTime: (formattedTime: string, fps: number, isDuration?: boolean) => number;
+
+	/** Forces the garbage collector to run */
+	garbageCollect: () => void;
+
+	/** Generates a random number */
+	generateRandomNumber: () => number;
+
+	/** When true, the specified object exists. */
+	isValid: (obj: any) => boolean;
+
+	/** Converts a numeric time value to a string time value. */
+	timeToCurrentFormat: (time: number, fps: number, isDuration?: boolean) => string;
+
+	/** Writes text to the Info panel, with no line break added. */
+	write: (text: string) => void;
+
+	/** Writes text to the console, with no line break added. */
+	writeConsole: (text: string) => void;
+
+	/** Writes text to the debug log, with no line break added. */
+	writeDebugLog: (text: string) => void;
+
+	/** Writes text to the Info panel, adding a line break at the end. */
+	writeLn: (text: string) => void;
 }
 
 // CONSTANTS
